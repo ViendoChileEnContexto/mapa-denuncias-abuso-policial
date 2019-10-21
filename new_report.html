@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapa de denuncias de abuso policial durante las manifestaciones</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="title">
+            <a class="ui negative basic button" id="back" href="index.html">Volver al mapa</a>
+            <h1>Reportar un nuevo abuso</h1>
+            <p>Rellena este formulario para reportar un nuevo conflicto. Después de ser comprobado por nuestro equipo,
+                lo agregaremos al mapa principal.
+            </p>
+        </div>
+    </div>
+    <form class="ui form">
+        <div class="field">
+            <label>Nombre del lugar</label>
+            <input type="text" name="Lugar" placeholder="Lugar">
+        </div>
+        <div class="field">
+            <label>Etiqueta (qué tipo de conflicto: disparo, atropello, etc)</label>
+            <input type="text" name="Etiqueta" placeholder="Etiqueta">
+        </div>
+        <div class="field">
+            <label>Link de Instagram del video</label>
+            <input type="url" name="Link" placeholder="Link de Instagram">
+        </div>
+        <div class="field">
+            <label>Otras fuentes de información</label>
+            <input type="text" name="Otros" placeholder="Otros">
+        </div>
+        <div class="field">
+            <label>Selecciona en el mapa las coordenadas del suceso:</label>
+            <div id="report-map"></div>
+        </div>
+        <div class="field" style="display: none;">
+            <label>Latitud</label>
+            <input type="number" name="Latitud" placeholder="Latitud" id="lat-input">
+        </div>
+        <div class="field" style="display: none;">
+            <label>Longitud</label>
+            <input type="number" name="Longitud" placeholder="Longitud" id="lng-input">
+        </div>
+        <button class="ui button" type="submit">Subir</button>
+    </form>
+    <div id="report-map"></div>
+    <script src="./communes.js"></script>
+    <script src="./new_report.js"></script>
+</body>
+
+</html>
