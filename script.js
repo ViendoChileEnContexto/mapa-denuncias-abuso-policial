@@ -14,12 +14,12 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 const marker = L.marker([-33.4179685,-70.6148625]).addTo(myMap);
 marker.bindPopup(`    <div class="ui card">
 <div class="content">
-    <a class="header">Lugar</a>
+    <p class="header">Lugar</p>
     <div class="meta">
         <span class="date">Fecha</span>
     </div>
     <div class="description">
-        Carabineros hicieron X
+        Carabineros hicieron X.
     </div>
 </div>
 <div class="extra content">
@@ -28,4 +28,4 @@ marker.bindPopup(`    <div class="ui card">
         Link a Instagram
     </a>
 </div>
-</div>`).openPopup();
+</div>`);
