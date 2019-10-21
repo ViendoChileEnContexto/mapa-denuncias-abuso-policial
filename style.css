@@ -1,4 +1,10 @@
-#mapid { height: 85vh; }
+#mapid {
+    height: 75vh;
+}
+#report-map {
+    height: 40vh;
+    width: 100%;
+}
 body {
     margin-left: 20px !important;
     margin-right: 20px !important;
@@ -7,4 +13,18 @@ body {
 }
 h1 {
     text-align: center;
+}
+p {
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+}
+#new {
+    float: right;
+}
+.top {
+    display: flex;
+    flex-direction: column;
+}
+#back {
+    float: left;
 }
