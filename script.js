@@ -11,21 +11,31 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 //     .setContent('<p>Hello world!<br />This is a nice popup.</p>')
 //     .openOn(myMap);
 
-const marker = L.marker([-33.4179685,-70.6148625]).addTo(myMap);
-marker.bindPopup(`    <div class="ui card">
-<div class="content">
-    <p class="header">Lugar</p>
-    <div class="meta">
-        <span class="date">Fecha</span>
-    </div>
-    <div class="description">
-        Carabineros hicieron X.
-    </div>
-</div>
-<div class="extra content">
-    <a>
-        <i class="play icon"></i>
-        Link a Instagram
-    </a>
-</div>
-</div>`);
+d3.tsv("first_data.tsv").then(data => {
+
+    data.forEach((row) => {
+        console.log(row["Lugar"])
+        const lat = communes[row["Lugar"]]["lat"];
+        const lng = communes[row["Lugar"]]["lng"];
+        console.log(`${lat},${lng}`)
+        const marker = L.marker([lat,lng]).addTo(myMap);
+        marker.bindPopup(`    <div class="ui card">
+        <div class="content">
+            <p class="header">${row["Lugar"]}</p>
+            <div class="meta">
+                <span class="date">Etiqueta: ${row["Etiqueta"]}</span>
+            </div>
+            <div class="description">
+                ${row["Otros"]}
+            </div>
+        </div>
+        <div class="extra content">
+            <a href="${row["Link"]}">
+                <i class="play icon"></i>
+                Link a Instagram
+            </a>
+        </div>
+        </div>`);
+    });
+
+});
