@@ -6,18 +6,11 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: "pk.eyJ1IjoiZGlmbG9yZXMiLCJhIjoiY2o2Zmc2dnRpMGg0cDMzbzZscDc4MHUydSJ9.mLucb_Bjd4Et9otFMcctFQ"
 }).addTo(myMap);
 
-// const popup = L.popup()
-//     .setLatLng([-33.4179685,-70.6148625,17])
-//     .setContent('<p>Hello world!<br />This is a nice popup.</p>')
-//     .openOn(myMap);
-
 d3.tsv("first_data.tsv").then(data => {
 
     data.forEach((row) => {
-        console.log(row["Lugar"])
         const lat = communes[row["Lugar"]]["lat"];
         const lng = communes[row["Lugar"]]["lng"];
-        console.log(`${lat},${lng}`)
         const marker = L.marker([lat,lng]).addTo(myMap);
         marker.bindPopup(`    <div class="ui card">
         <div class="content">
@@ -30,7 +23,7 @@ d3.tsv("first_data.tsv").then(data => {
             </div>
         </div>
         <div class="extra content">
-            <a href="${row["Link"]}">
+            <a href="${row["Link"]}" target=”_blank” rel=”noopener noreferrer”>
                 <i class="play icon"></i>
                 Link a Instagram
             </a>
