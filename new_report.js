@@ -33,7 +33,10 @@ const submitForm = () => {
         url: "https://backend-mapa-abuso-policial.herokuapp.com/report",
         data: formData,
         crossDomain: true,
-        success: function() {},
+        success: function() {alert("Reporte correctamente subido. ¡Muchas gracias!")},
+        error: function() {
+            alert("Ha ocurrido un error. Por favor, intenta de nuevo.");
+        },
         dataType: "json",
         contentType: "application/json"
     });
