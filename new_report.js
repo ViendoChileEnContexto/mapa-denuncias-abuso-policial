@@ -14,8 +14,8 @@ const updateMarker = (lat, lng) => {
         .openPopup();
     return false;
 };
-reportMap.on('click', function(e) {
-    $('#lat-input').val(e.latlng.lat);
-    $('#lng-input').val(e.latlng.lng);
+reportMap.on("click", function(e) {
+    $("#lat-input").val(e.latlng.lat);
+    $("#lng-input").val(e.latlng.lng);
     updateMarker(e.latlng.lat, e.latlng.lng);
 });
