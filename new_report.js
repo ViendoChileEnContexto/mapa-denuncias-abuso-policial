@@ -19,3 +19,17 @@ reportMap.on("click", function(e) {
     $("#lng-input").val(e.latlng.lng);
     updateMarker(e.latlng.lat, e.latlng.lng);
 });
+
+const submitForm = () => {
+    const formData = JSON.stringify($("#new-report-form").serializeArray());
+    console.log(formData);
+    $.ajax({
+        type: "POST",
+        url: "https://backend-mapa-abuso-policial.herokuapp.com/report",
+        data: formData,
+        crossDomain: true,
+        success: function(){},
+        dataType: "json",
+        contentType : "application/json"
+      });
+};

@@ -31,7 +31,7 @@
             </p>
         </div>
     </div>
-    <form class="ui form">
+    <form class="ui form" id="new-report-form">
         <div class="field">
             <label>Nombre del lugar</label>
             <input type="text" name="Lugar" placeholder="Lugar">
@@ -60,7 +60,7 @@
             <label>Longitud</label>
             <input type="number" name="Longitud" placeholder="Longitud" id="lng-input">
         </div>
-        <button class="ui button" type="submit">Subir</button>
+        <button class="ui button" type="submit" onclick="submitForm()">Subir</button>
     </form>
     <div id="report-map"></div>
     <script src="./communes.js"></script>
