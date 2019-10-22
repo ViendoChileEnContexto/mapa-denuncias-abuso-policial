@@ -14,7 +14,7 @@ body {
 h1 {
     text-align: center;
 }
-p {
+.web-p {
     margin-top: 1rem !important;
     margin-bottom: 2rem !important;
 }
