@@ -28,3 +28,6 @@ h1 {
 #back {
     float: left;
 }
+#report-title {
+    margin-top: 2.5rem;
+}
